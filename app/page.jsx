@@ -1,5 +1,8 @@
 import TicketCard from "./(components)/TicketCard";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 const getTickets = async () => {
   try {
     console.log("vercel url: ", process.env.NEXT_PUBLIC_VERCEL_URL);
