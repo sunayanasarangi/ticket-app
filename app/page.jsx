@@ -8,6 +8,10 @@ const getTickets = async () => {
       cache: "no-store",
     });
 
+    // check if the response was successful
+    if (!res.ok) {
+      throw new Error(`Server responded with status: ${res.status}`);
+    }
     return res.json();
   } catch (error) {
     console.log("Failed to get tickets", error);
