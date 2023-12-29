@@ -1,15 +1,17 @@
 import TicketCard from "./(components)/TicketCard";
 
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
+//export const dynamic = "force-dynamic";
+//export const fetchCache = "force-no-store";
 
 const getTickets = async () => {
   try {
-    console.log("vercel url: ", process.env.NEXT_PUBLIC_VERCEL_URL);
     //const res = await fetch("http://localhost:3000/api/Tickets", {
-    const res = await fetch(`https://${process.env.VERCEL_URL}/api/Tickets`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/Tickets`,
+      {
+        cache: "no-store",
+      }
+    );
 
     // check if the response was successful
     if (!res.ok) {
