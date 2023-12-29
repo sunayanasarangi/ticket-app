@@ -2,6 +2,7 @@ import TicketCard from "./(components)/TicketCard";
 
 const getTickets = async () => {
   try {
+    console.log("vercel url: ", process.env.VERCEL_URL);
     //const res = await fetch("http://localhost:3000/api/Tickets", {
     const res = await fetch(`https://${process.env.VERCEL_URL}/api/Tickets`, {
       cache: "no-store",
