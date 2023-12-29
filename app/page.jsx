@@ -7,7 +7,7 @@ const getTickets = async () => {
     const res = await fetch(`https://${process.env.VERCEL_URL}/api/Tickets`, {
       cache: "no-store",
     });
-    console.log("Is it failing here?");
+
     return res.json();
   } catch (error) {
     console.log("Failed to get tickets", error);
@@ -15,7 +15,7 @@ const getTickets = async () => {
 };
 const Dashboard = async () => {
   const { tickets } = await getTickets();
-
+  console.log("Is it failing here?");
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }) => category)),
   ];
