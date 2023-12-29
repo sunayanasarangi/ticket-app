@@ -9,7 +9,6 @@ const getTickets = async () => {
         cache: "no-store",
       }
     );
-    console.log("Failing here");
     return res.json();
   } catch (error) {
     console.log("Failed to get tickets", error);
